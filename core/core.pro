@@ -83,6 +83,12 @@ mce {
     DEFINES += SENSORFW_MCE_WATCHER
 }
 
+contains(CONFIG,iio) {
+    SOURCES += iioadaptor.cpp
+    HEADERS += iioadaptor.h
+    PKGCONFIG += libudev
+}
+
 contains(CONFIG,ssusysinfo) {
     PKGCONFIG += ssu-sysinfo
     QMAKE_CXXFLAGS += -DUSE_SSUSYSINFO

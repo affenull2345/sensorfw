@@ -94,6 +94,7 @@ export LD_RUN_PATH=%{_libdir}/sensord-qt5/
 %qmake5  \
     CONFIG+=ssusysinfo\
     CONFIG+=mce\
+    CONFIG+=iio\
     PC_VERSION=`echo %{version} | sed 's/+.*//'`
 
 %make_build

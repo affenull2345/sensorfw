@@ -37,8 +37,16 @@ SUBDIRS = alsadaptor \
           gyroscopeadaptor \
           gyroscopeadaptor-evdev
 
+contains(CONFIG,iio) {
+    SUBDIRS += iioaccelerometeradaptor
+    SUBDIRS += iiogyroscopeadaptor
+    SUBDIRS += iiomagnetometeradaptor
+    SUBDIRS += iioalsadaptor
+    SUBDIRS += iioproximityadaptor
+    SUBDIRS += iioorientationadaptor
+}
+
 SUBDIRS += lidsensoradaptor-evdev
-SUBDIRS += iioadaptor
 SUBDIRS += humidityadaptor
 SUBDIRS += pressureadaptor
 SUBDIRS += temperatureadaptor
